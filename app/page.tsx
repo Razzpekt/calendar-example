@@ -38,12 +38,12 @@ export default function Home() {
         <div className='h-[100svh] overflow-scroll'>
           <div className='flex w-min'>
             <div
-              className='sticky left-0 z-50 grid bg-slate-100'
+              className='sticky left-0 z-50 grid bg-slate-100 dark:bg-slate-700'
               style={{
                 gridTemplateColumns: `56px`,
               }}
             >
-              <div className='sticky top-0 z-50 flex h-10 items-center justify-center self-start border-b border-r border-dotted bg-slate-100'>
+              <div className='sticky top-0 z-50 flex h-10 items-center justify-center self-start border-b border-r border-dotted border-neutral-400 dark:border-neutral-600 bg-slate-100 dark:bg-slate-700'>
                 <Clock className='h-5 w-5' />
               </div>
               {timeStamps.map((timeStamp, i) => {
@@ -51,7 +51,7 @@ export default function Home() {
                   <div
                     key={i}
                     className={cn(
-                      'sticky top-10 bg-slate-100 flex h-10 w-14 items-center justify-center border-b border-r border-dotted border-neutral-300',
+                      'sticky top-10 bg-slate-100 dark:bg-slate-700 flex h-10 w-14 items-center justify-center border-b border-r border-dotted border-neutral-400 dark:border-neutral-600',
                       timeStamp.isNewHour && 'font-bold'
                     )}
                   >
@@ -70,7 +70,7 @@ export default function Home() {
                 return (
                   <div
                     key={i}
-                    className='sticky top-0 left-14 z-40 flex h-10 flex-1 items-center gap-1 self-start truncate border-b border-r border-dotted bg-slate-100 px-2'
+                    className='sticky top-0 left-14 z-40 flex h-10 flex-1 items-center gap-1 self-start truncate border-b border-r border-dotted border-neutral-400 dark:border-neutral-600 bg-slate-100 dark:bg-slate-700 px-2'
                   >
                     <div className='truncate sticky left-0'>{label}</div>
                   </div>
@@ -90,9 +90,8 @@ export default function Home() {
                         return (
                           <div className='h-10' key={i2}>
                             <div
-                              className='flex justify-center items-center relative z-30 overflow-auto rounded-lg border-b border-dotted border-neutral-400  p-2 shadow-md shadow-neutral-400'
+                              className='bg-green-500 flex justify-center items-center relative z-30 overflow-auto rounded-lg border-b border-dotted border-neutral-400 dark:border-neutral-600  p-2 shadow-md shadow-neutral-400 dark:shadow-neutral-600'
                               style={{
-                                backgroundColor: 'lime',
                                 //this number needs to fit the height of left entries. currently h-10 = 40px
                                 height: 40 * appointment.duration + 'px',
                               }}
@@ -104,7 +103,7 @@ export default function Home() {
                       } else {
                         return (
                           <div
-                            className='flex items-center justify-center h-10 border-b border-dotted border-neutral-300 font-extralight text-gray-400'
+                            className='flex items-center justify-center h-10 border-b border-dotted border-neutral-400 dark:border-neutral-600 font-extralight text-gray-400'
                             key={i2}
                           >{`${timeStamp.label} - ${label}`}</div>
                         )
